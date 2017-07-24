@@ -260,7 +260,7 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="lt7-cZ-A11" firstAttribute="width" secondItem="1x7-qN-GyS" secondAttribute="width" multiplier="2:1" id="Gtf-u1-IzB"/>
+                                                    <constraint firstItem="lt7-cZ-A11" firstAttribute="width" secondItem="1x7-qN-GyS" secondAttribute="width" multiplier="2:1" constant="1" id="Gtf-u1-IzB"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
