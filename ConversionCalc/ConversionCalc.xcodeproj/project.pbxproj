@@ -15,7 +15,6 @@
 		C3F228851F26574400A40AA4 /* ConversionCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F228841F26574400A40AA4 /* ConversionCalcUITests.swift */; };
 		C3F228931F265F3A00A40AA4 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F228921F265F3A00A40AA4 /* CalculatorViewController.swift */; };
 		C3F228961F2663B800A40AA4 /* CalculateConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F228951F2663B800A40AA4 /* CalculateConversion.swift */; };
-		C3F228981F2665D500A40AA4 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F228971F2665D500A40AA4 /* Unit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +49,6 @@
 		C3F228861F26574400A40AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3F228921F265F3A00A40AA4 /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		C3F228951F2663B800A40AA4 /* CalculateConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateConversion.swift; sourceTree = "<group>"; };
-		C3F228971F2665D500A40AA4 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				C3F228951F2663B800A40AA4 /* CalculateConversion.swift */,
-				C3F228971F2665D500A40AA4 /* Unit.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -274,7 +271,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3F228931F265F3A00A40AA4 /* CalculatorViewController.swift in Sources */,
-				C3F228981F2665D500A40AA4 /* Unit.swift in Sources */,
 				C3F228961F2663B800A40AA4 /* CalculateConversion.swift in Sources */,
 				C3F228651F26574400A40AA4 /* AppDelegate.swift in Sources */,
 			);

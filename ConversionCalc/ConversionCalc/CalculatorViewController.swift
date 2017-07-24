@@ -18,7 +18,7 @@ class CalculatorViewController: UIViewController {
     
     var isThereADecimal: Bool = false
     
-    var unit: String = ""
+    var unit: String = "fahrenheit"
     
     
     override func viewDidLoad() {
@@ -90,7 +90,7 @@ class CalculatorViewController: UIViewController {
         
         
         // Dev code used for testing as I build //
-        outputBox.text = unit
+        outputBox.text = String(unit)
         //*************************************///
         
         
@@ -98,30 +98,37 @@ class CalculatorViewController: UIViewController {
     }
     
     
+    //Update Function goes here
+    
+    func update(_ number: Double) {
+        
+    }
+    
+    
     @IBAction func chooseUnits(_ sender: AnyObject) {
-        let alert = UIAlertController(title: "Choice", message: "Choose!", preferredStyle: UIAlertControllerStyle.actionSheet)
-        alert.addAction(UIAlertAction(title: "A", style: UIAlertActionStyle.default, handler: {
+        let alert = UIAlertController(title: "", message: "Choose Converter", preferredStyle: UIAlertControllerStyle.actionSheet)
+        alert.addAction(UIAlertAction(title: "Fahrenheit to Celcius", style: UIAlertActionStyle.default, handler: {
             (alertAction) -> Void in
             // handle choice A
-            self.unit = "A"
+            self.unit = "fahrenheit"
             
         }))
-        alert.addAction(UIAlertAction(title: "B", style: UIAlertActionStyle.default, handler: {
+        alert.addAction(UIAlertAction(title: "Celcius to Fahrenheit", style: UIAlertActionStyle.default, handler: {
             (alertAction) -> Void in
             // handle choice B
-            self.unit = "B"
+            self.unit = "celcius"
             
         }))
-        alert.addAction(UIAlertAction(title: "C", style: UIAlertActionStyle.default, handler: {
+        alert.addAction(UIAlertAction(title: "Miles to Kilometers", style: UIAlertActionStyle.default, handler: {
             (alertAction) -> Void in
             // handle choice C
-            self.unit = "C"
+            self.unit = "miles"
             
         }))
-        alert.addAction(UIAlertAction(title: "D", style: UIAlertActionStyle.default, handler: {
+        alert.addAction(UIAlertAction(title: "Kilometers to Miles", style: UIAlertActionStyle.default, handler: {
             (alertAction) -> Void in
             // handle choice D
-            self.unit = "D"
+            self.unit = "kilometers"
             
         }))
         self.present(alert, animated: true, completion: nil)

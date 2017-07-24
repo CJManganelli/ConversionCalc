@@ -8,14 +8,22 @@
 
 import Foundation
 
-func calculateConversion() -> Double {
-    var input: Double = 0.0
-    var output: Double = 0.0
+class CalculateConversion {
+
+    class func toCelcius(_ fahrenheit: Double) -> Double {
+        return (fahrenheit - 32) * (5/9)
+    }
     
-    output = 1.3
-    input = 3.3
+    class func toFehrenheit (_ celcius: Double) -> Double {
+        return (celcius * (5/9)) + 32
+    }
     
+    class func toKilometers (_ miles: Double) -> Double {
+        return miles * 1.60934
+    }
     
-    
-    return output
+    class func toMiles (_ kilometers: Double) -> Double {
+        return kilometers / 1.60934
+    }
+
 }
