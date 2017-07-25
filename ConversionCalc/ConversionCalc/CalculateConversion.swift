@@ -14,7 +14,7 @@ class CalculateConversion {
         return (fahrenheit - 32) * (5/9)
     }
     
-    class func toFehrenheit (_ celcius: Double) -> Double {
+    class func toFahrenheit (_ celcius: Double) -> Double {
         return (celcius * (5/9)) + 32
     }
     
