@@ -15,7 +15,7 @@ class CalculateConversion {
     }
     
     class func toFahrenheit (_ celcius: Double) -> Double {
-        return (celcius * (5/9)) + 32
+        return (celcius * (9/5)) + 32
     }
     
     class func toKilometers (_ miles: Double) -> Double {

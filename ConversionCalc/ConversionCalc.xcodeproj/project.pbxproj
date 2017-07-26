@@ -519,6 +519,7 @@
 				C3F2288B1F26574400A40AA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3F2288C1F26574400A40AA4 /* Build configuration list for PBXNativeTarget "ConversionCalcTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +528,7 @@
 				C3F2288E1F26574400A40AA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3F2288F1F26574400A40AA4 /* Build configuration list for PBXNativeTarget "ConversionCalcUITests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +537,7 @@
 				C3F228911F26574400A40AA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,20 +14,25 @@ class CalculatorViewController: UIViewController {
     
     @IBOutlet weak var inputBox: UITextField!
     @IBOutlet weak var outputBox: UITextField!
+    @IBOutlet weak var topSuffix: UITextField!
+    @IBOutlet weak var bottomSuffix: UITextField!
     
     
     var isThereADecimal: Bool = false
     
-    var unit: String = ""
+    var unitName: String = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         isThereADecimal = false
-        inputBox.text = "0.0"
-        unit = "celcius"
-        update(0.0)
+        inputBox.text = ""
+        unitName = "fahrenheit"
+        topSuffix.text = " ºC"
+        bottomSuffix.text = " ºF"
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -52,20 +57,21 @@ class CalculatorViewController: UIViewController {
         
         
         //And then update output textfield
-        
+        update(inputBox.text!)
     }
 
 
     @IBAction func decimalBtnPress(_ sender: UIButton) {
         if isThereADecimal == true {
             //isThereADecimal = false
-            outputBox.text! = String(isThereADecimal) //for testing as I build
+            //outputBox.text! = String(isThereADecimal) //for testing as I build
         }
         else if isThereADecimal == false {
             isThereADecimal = true
             inputBox.text = inputBox.text! + "."
             
-            outputBox.text! = String(isThereADecimal) // for testing as I build
+            //outputBox.text! = String(isThereADecimal) // for testing as I build
+            
         }
     }
     
@@ -73,109 +79,104 @@ class CalculatorViewController: UIViewController {
     @IBAction func plusMinusBtnPress(_ sender: UIButton) {
         
         if inputBox.text == "" {
+            print("uhhhh")
             // literally do nothing
-        }
-        if inputBox.text == "." {
+        } else if inputBox.text == "." {
             // still do nothing
-        }
-        else {
+        } else {
             var number = Double(inputBox.text!)
             number = number! * -1.0
             inputBox.text = String(number!)
-            update(number!)
+            update(String(number!))
         }
         
         
-        //And then update output textfield
         
     }
     
     
     @IBAction func clearBtnPress(_ sender: UIButton) {
-        inputBox.text = "0.0"
+        inputBox.text = ""
+        outputBox.text = ""
         isThereADecimal = false
-        
-        
-        // Dev code used for testing as I build //
-        //let num = 4.5
-        //outputBox.text = String(unit)
-        //*************************************///
-        
-        
-        //And then update output textfield
-        update(0.0)
     }
     
     
     //Update Function goes here
     
-    func update(_ number: Double) {
-        //var convertedNum: Double = 0.0
+    func update(_ numberString: String) {
+        
+        let unit: String = self.unitName
+        let number = Double(numberString)
         
         switch unit {
             
             case "fahrenheit":
-                let convertedNum = CalculateConversion.toCelcius(number)
+                let convertedNum = CalculateConversion.toCelcius(number!)
                 outputBox.text = String(format:"%.2f", convertedNum)
                 print(convertedNum)
-                print("F")
             
             case "celcius":
-                let convertedNum = CalculateConversion.toFahrenheit(number)
+                let convertedNum = CalculateConversion.toFahrenheit(number!)
                 outputBox.text = String(format:"%.2f", convertedNum)
                 print(convertedNum)
-                print("C")
             
             case "miles":
-                let convertedNum = CalculateConversion.toKilometers(number)
+                let convertedNum = CalculateConversion.toKilometers(number!)
                 outputBox.text = String(format:"%.2f", convertedNum)
                 print(convertedNum)
-                print("M")
             
             case "kilometers":
-                let convertedNum = CalculateConversion.toMiles(number)
+                let convertedNum = CalculateConversion.toMiles(number!)
                 outputBox.text = String(format:"%.2f", convertedNum)
                 print(convertedNum)
-                print("K")
             
             default:
-                let convertedNum = 0.0
-                outputBox.text = String(format:"%.2f", convertedNum)
+                outputBox.text = ""
             
         }
         
-        //outputBox.text = String(format:"%.2f", convertedNum)
         
     }
     
+    
+
     
     @IBAction func chooseUnits(_ sender: AnyObject) {
         let alert = UIAlertController(title: "", message: "Choose Converter", preferredStyle: UIAlertControllerStyle.actionSheet)
         alert.addAction(UIAlertAction(title: "Fahrenheit to Celcius", style: UIAlertActionStyle.default, handler: {
             (alertAction) -> Void in
             // handle choice A
-            self.unit = "fahrenheit"
+            self.unitName = "fahrenheit"
+            self.bottomSuffix.text = " ºF"
+            self.topSuffix.text = " ºC"
             print("selected F")
             
         }))
         alert.addAction(UIAlertAction(title: "Celcius to Fahrenheit", style: UIAlertActionStyle.default, handler: {
             (alertAction) -> Void in
             // handle choice B
-            self.unit = "celcius"
+            self.unitName = "celcius"
+            self.bottomSuffix.text = " ºC"
+            self.topSuffix.text = " ºF"
             print("selected C")
             
         }))
         alert.addAction(UIAlertAction(title: "Miles to Kilometers", style: UIAlertActionStyle.default, handler: {
             (alertAction) -> Void in
             // handle choice C
-            self.unit = "miles"
+            self.unitName = "miles"
+            self.bottomSuffix.text = " MI"
+            self.topSuffix.text = " KM"
             print("selected M")
             
         }))
         alert.addAction(UIAlertAction(title: "Kilometers to Miles", style: UIAlertActionStyle.default, handler: {
             (alertAction) -> Void in
             // handle choice D
-            self.unit = "kilometers"
+            self.unitName = "kilometers"
+            self.bottomSuffix.text = " KM"
+            self.topSuffix.text = " MI"
             print("selected K")
             
         }))
